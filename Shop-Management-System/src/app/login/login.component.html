@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div class="container">
+	  <div class="row">
+	    <div class="col-xl"></div>
+
+	    <div class="col-xl">
+	    	<h4 class="text-center madmintext">ADMIN</h4>
+	    	<hr>
+
+			<form #loginForm="ngForm" (ngSubmit)="getLoginValues(loginForm.value)" >
+				<div class="mb-3">
+				  <label for="exampleInputEmail1" class="form-label">Username</label>
+				  <input type="email" ngModel class="form-control" aria-describedby="emailHelp" name="email">
+				  
+				</div>
+				<div class="mb-3">
+				  <label for="exampleInputPassword1" class="form-label">Password</label>
+				  <input type="password" ngModel class="form-control" name="password" >
+				</div>
+				
+				<!-- <div class="alert alert-danger" role="alert" *ngIf="!(isFormInValid)">
+                    Please fill all fields.
+                </div> -->
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                    Invalid Username or Password.
+				</div>
+				
+				<div class="col text-center mydiv">
+					<a href="#!">Forgot password?</a>
+				  </div>
+
+				<div class="text-center">
+					<button type="submit" class="btn btn-primary">LOGIN</button>
+				</div>
+
+			  </form>
+
+	    </div>
+
+	    <div class="col-xl"></div>
+	  </div>
+	</div>
+
+</body>
+</html>

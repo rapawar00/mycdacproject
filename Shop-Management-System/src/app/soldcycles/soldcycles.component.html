@@ -1,0 +1,91 @@
+<html>
+  <body>
+    <h4 class="text-center madmintext">REPORT ON SOLD CYCLES</h4>
+    <hr>           
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+
+        <div class="col-7">            
+          <table class="table table-hover table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Sr.No</th>
+                <th scope="col">Brand Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Cycle Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Price</th>
+                 
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of soldcycles">
+                  <td>{{x.Id}}</td>
+                  <td>{{x.Brand}}</td>
+                  <td>{{x.Type}}</td> 
+                  <td>{{x.Cyclename}}</td>
+                  <td>{{x.Date}}</td>
+                  <td>{{x.Discount}}</td>
+                  <td>{{x.Price}}</td>
+
+                  <!-- <tr >
+                    <td>101</td>
+                    <td>Avon</td>
+                    <td>Mens</td> 
+                    <td>cyclename4</td>
+                    <td>17-Aug-2020</td>
+                    <td>45%</td>
+                    <td>26999</td>
+
+                    <tr >
+                      <td>102</td>
+                      <td>Atlas</td>
+                      <td>Mens</td> 
+                      <td>cyclename6</td>
+                      <td>19-Aug-2020</td>
+                      <td>45%</td>
+                      <td>22999</td>
+
+                      <tr >
+                        <td>103</td>
+                        <td>Avon</td>
+                        <td>Kids</td> 
+                        <td>cyclename11</td>
+                        <td>14-Oct-2020</td>
+                        <td>60%</td>
+                        <td>24599</td>
+
+                        <tr >
+                          <td>104</td>
+                          <td>Hercules</td>
+                          <td>Mens</td> 
+                          <td>cyclename22</td>
+                          <td>15-Jan-2021</td>
+                          <td>30%</td>
+                          <td>22399</td>
+                    
+                    </tr> -->
+            </tbody>
+          </table>                    
+        </div>
+
+        <div class="col"></div>
+      </div>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-5">                   
+            <div class="col">
+              <div class="text-right mydiv">
+                <button type="button"  class="btn btn-outline-secondary btn-sm">Send</button>
+                <button type="button" (click)="printPage()" class="btn btn-outline-secondary btn-sm">Print</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

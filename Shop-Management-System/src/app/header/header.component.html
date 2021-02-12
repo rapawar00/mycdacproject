@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 class="text-center fw-bolder mheading">ShowRoom Management System</h1>
+	  
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand " routerLink="/" ><img class="mlogoimage" src="/assets/images/logo2.jpeg"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mnav">
+
+          <li class="nav-item ">
+            <a class="nav-link active" aria-current="page" routerLink="/">HOME</a>
+          </li>
+
+          <li class="nav-item msubheading">
+            <a class="nav-link" routerLink="/allcycles">ALL CYCLES</a>
+          </li>
+
+          <span *ngIf= "adminloginserviceService.isAuthenticated" class="nav-item">
+            <li class=" dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMINISTRATION</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" routerLink="/soldcycles">Sold Cycles</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" routerLink="/soldcycleslist">Report Sold Cycles</a></li>
+                  <li><a class="dropdown-item" routerLink="/existingcycleslist">Report Existing Cycles</a></li>
+                </ul>
+            </li>                   
+          </span>
+      
+          <span *ngIf= "adminloginserviceService.isAuthenticated" class="nav-item msubheading">
+            <li>
+              <a class="nav-link active pointer" (click)="logout()">LOGOUT</a>
+            </li>
+          </span>
+          <span *ngIf= "!(adminloginserviceService.isAuthenticated)">
+            <li class="nav-item msubheading">
+              <a class="nav-link active" routerLink="/login">LOGIN</a>
+            </li>
+          </span>
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>
